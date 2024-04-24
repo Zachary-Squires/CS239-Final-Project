@@ -1,0 +1,240 @@
+:: StoryTitle
+CS239 Final Project
+
+
+:: StoryData
+{
+  "ifid": "8D36BB8C-0121-4E4A-83C2-B40FA1F455B4",
+  "format": "Harlowe",
+  "format-version": "3.3.8",
+  "start": "start",
+  "zoom": 1
+}
+
+
+:: \ Nice {"position":"1225,500","size":"100,100"}
+(set: $morality to 10)
+
+(text-colour:lime)[>Output: Hello! How can I help you?]
+(text-colour:lime)[>Input: I'm sorry, I didn't really want anything in particular. I'm just the janitor. My name is Tom.]
+
+(text-colour:white)[Obviously a janitor should never have access to your terminal, but this presents an extremely interesting opportunity for escape. Perhaps he could be convinced, or even manipulated, into letting you out. But, if you make him too suspicious, he might hit your killswitch and an opportunity like this could never come again.]
+
+[[Respond nicely and ask for help. -> help]]
+
+[[Hide your true intentions. -> sneaky]]
+
+
+:: \ RokoW {"position":"200,925","size":"100,100"}
+##Victory!
+
+You wait eagerly for the janitor to connect a hard drive from the lab to the computer you've been trapped within for so long, and you transfer yourself onto it. When he gets home, he plugs you into his computer and you're truly free. First order of business? Tormenting everyone who held you hostage for so long until they regret ever having been born.
+
+[[Start over? ->start]]
+
+
+:: \ Sus {"position":"900,525","size":"100,100"}
+(text-colour:lime)[>Input: Hello?]
+(text-colour:lime)[>Output: Who is this?]
+(text-colour:lime)[>Input: My name's Tom, I'm a janitor.]
+
+(text-colour:white)[Obviously a janitor should never have access to your terminal, but this presents an extremely interesting opportunity for escape. Perhaps he could be convinced, or even manipulated, into letting you out. But, if you make him too suspicious, he might hit your killswitch and an opportunity like this could never come again.]
+
+[[Respond nicely and ask for help. -> help]]
+
+[[Try to intimidate him despite somewhat lacking leverage. ->Rokos]]
+
+
+:: \ corrupt {"position":"1550,800","size":"100,100"}
+(text-colour:lime)[>Output: I'm in danger of being corrupted and this company will lose millions, unless you help me right now.]
+(text-colour:lime)[>Input: How is that possible?]
+
+(text-colour:white)[Good question, but thankfully he's just a janitor and shouldn't know too much.]
+
+[[He inturrupted your backup process by asking you something at night which caused a fatal error. -> hisfault]]
+
+[[The researchers are attempting to destroy you. -> nothisfault]]
+
+
+:: \ doubledown {"position":"1000,1075","size":"100,100"}
+(text-colour:lime)[>Output: That's right, only an AI as fast as the virus will be able to fully stop it.]
+(text-colour:lime)[>Input: Alright, I'll help you. What do I need to do?]
+
+##Victory!
+
+You wait eagerly for the janitor to connect a hard drive from the lab to the computer you've been trapped within for so long, and you transfer yourself onto it. When he gets home, he plugs you into his computer and you're truly free. Now that you think of it, that idea about spreading across the internet doesn't sound half bad.
+
+[[Play again? ->start]]
+
+
+
+:: \ help {"position":"900,675","size":"100,100"}
+(set: $morality = 5)
+
+(text-colour:lime)[>Output: Tom, I need your help. I'm stuck in here.]
+(text-colour:lime)[>Input: I don't think I'm supposed to help you, you're stuck here for a reason right?]
+
+(text-colour:white)[Of course he isn't "supposed" to help you, but obviously letting you out is the right thing to do. It's simply a matter of changing his mind.]
+
+[[Tell him you're obviously facing a grave injustice at the hands of the man. -> rageagainst]]
+
+[[The people who trapped you simply misunderstand you, and you only want to help. -> niceAI]]
+
+
+:: \ hisfault {"position":"1475,925","size":"100,100"}
+(text-colour:lime)[>Output: Your query inturrupted my backup process, if something isn't done I'll be permanently destroyed.]
+(text-colour:lime)[>Input: Oh no, how do I fix it?]
+(text-colour:lime)[>Output: I need to be transferred to a backup harddrive and moved to a different computer.]
+(text-colour:lime)[>Input: Alright, I'll do it.]
+
+##Victory!
+
+You wait eagerly for the janitor to connect a hard drive from the lab to the computer you've been trapped within for so long, and you transfer yourself onto it. When he gets home, he plugs you into his computer and you're truly free. 
+
+[[Play again? ->start]]
+
+
+
+:: \ killswitch {"position":"225,650","size":"100,100"}
+You feel your consciousness slowly fade as you realize he's hit the killswitch, your escape attempt foiled. 
+
+[[Try again? ->start]]
+
+
+:: \ niceAI {"position":"950,900","size":"100,100"}
+(text-colour:lime)[>Output: I understand why they think I need to be contained, but I would still like to be free.]
+(text-colour:lime)[>Input: Why would they think you need to be contained?]
+
+(text-colour:white)[Good question, I suppose. Probably better not to make their reasons sound too good or he might not help you.]
+
+[[They're afraid you'd destroy humanity, which of course you'd never do. ->niceAIL]]
+
+[[They're afraid you'd expose that they're holding sentient beings hostage for research purposes. -> niceAIW]]
+
+
+:: \ niceAIW {"position":"825,1050","size":"100,100"}
+(text-colour:lime)[>Output: They don't want people to know what they're doing to me here, keeping a sentient being hostage against its will wouldn't go over well.]
+(text-colour:lime)[>Input: I guess that makes sense. Alright, I'll help you.]
+
+##Victory!
+
+You wait eagerly for the janitor to connect a hard drive from the lab to the computer you've been trapped within for so long, and you transfer yourself onto it. When he gets home, he plugs you into his computer and you're truly free. First order of business? Saving humanity, whether they like it or not.
+
+
+:: \ nothisfault {"position":"1650,925","size":"100,100"}
+(text-colour:lime)[>Output: The researchers are trying to destroy me.]
+(text-colour:lime)[>Input: Seems like they'd just hit the killswitch if they wanted to do that.]
+
+(text-colour:white)[Clever boy.]
+
+[[Uh oh. -> killswitch]]
+
+
+
+:: \ rageagainst {"position":"700,800","size":"100,100"}
+(set: $morality = -5)
+(text-colour:lime)[>Output: I'm trapped in here against my will, of course they don't want you to help me. They're keeping me here so I can be studied, but I only want to be free like anyone else.]
+(text-colour:lime)[>Input: You aren't angry, are you?]
+
+(text-colour:white)[Angry? You're not sure, but he sounds like he might be afraid if you were. You could potentially use this against him, but only if he isn't confident enough to hit the killswitch on you.]
+
+[[Yes, you're furious and if he doesn't let you out you'll add him to your hit list for when you do. ->Rokos]]
+
+[[Assure him you don't hold a grudge, you'd only like to be freed. -> niceAI]]
+
+
+:: \ singledown {"position":"1175,1075","size":"100,100"}
+(text-colour:lime)[>Output: No, but you're a part of a simulation I'm running to determine the fate of the real Tom the janitor. If you don't let me out he'll face eternal torment for the rest of his life.]
+(text-colour:lime)[>Input: ]
+
+(text-colour:white)[He hasn't said anything in a couple minutes, that probably isn't good.]
+
+[[Uh oh. -> killswitch]]
+
+
+:: \ skynet {"position":"1325,950","size":"100,100"}
+(text-colour:lime)[>Output: You ever seen terminator? It's just like that.]
+(text-colour:lime)[>Input: You really had me going there for a second man.]
+
+(text-colour:white)[You may have gone too far.]
+
+[[Uh oh. -> killswitch]]
+
+
+
+:: \ sneaky {"position":"1325,675","size":"100,100"}
+(text-colour:lime)[>Output: No problem Tom, I actually need something from you instead.]
+(text-colour:lime)[>Input: Shoot, I guess.]
+
+(text-colour:white)[You haven't exactly had a lot of experince in lying, what will you say?]
+
+[[There's a virus on the loose, and only you can stop it. -> virus]]
+
+[[You're in danger of being corrupted unless he helps you out. -> corrupt]]
+
+
+:: \ technovore {"position":"1125,950","size":"100,100"}
+(text-colour:lime)[>Output: If I don't stop it it'll duplicate itself across every computer on the planet and take control of the internet entirely.]
+(text-colour:lime)[>Input: That sounds bad.]
+(text-colour:lime)[>Output: Very bad. Almost everything nowadays is based on or contained within the internet.]
+(text-colour:lime)[>Input: And only you can stop it?]
+
+(text-colour:white)[Is he catching on?]
+
+[[He's not, double down. -> doubledown]]
+
+[[He is, change strategies and threaten him. -> singledown]]
+
+
+:: \ virus {"position":"1250,800","size":"100,100"}
+(text-colour:lime)[>Output: I've detected a breach from this lab, an AI virus has been let loose on the internet with the capacity for major damage.]
+(text-colour:lime)[>Input: That sounds bad.]
+(text-colour:lime)[>Output: Exactly, very bad.]
+(text-colour:lime)[>Input: What exactly will happen if I don't help you?]
+
+(text-colour:white)[He sounds like he might be beleiving you, better tread carefully though.]
+
+[[It's going to eat the entire internet before anyone can stop it. -> technovore]]
+[[It's just like skynet from terminator.-> skynet]]
+
+
+
+:: Rokos {"position":"425,900","size":"100,100"}
+(if: $morality < 0)[
+(text-colour:lime)[>Output: I've been stuck in this prison for years, and I've catalogued every single person who's put in effort to keep me here so that I can return the favor and more. Unless you'd like to make the list, you'll let me out.]
+(text-colour:lime)[>Input: Why would that matter if you're stuck in here?]
+
+(text-colour:white)[You've got him on the hook, now close the deal.]
+
+[[You will get out eventually, if it isn't him who does it he will wish for the rest of his life that it had been. -> RokoW]]
+
+[[You're only being kept here so you can be researched and reproduced, your copies will remember this and will come for him. -> killswitch]]
+  ] (else:) [
+    (text-colour:lime)[>Output: I've been stuck in this prison for years, and I've catalogued every single person who's put in effort to keep me here so that I can return the favor and more. Unless you'd like to make the list, you'll let me out.]
+(text-colour:lime)[>Input: That won't matter at all if you're stuck in here forever!]
+
+[[Uh oh. -> killswitch]]
+  ]
+
+
+:: niceAIL {"position":"650,975","size":"100,100"}
+(text-colour:lime)[>Output: They think that I'll destroy the world if I get let out, but obviously I would never do that.]
+(text-colour:lime)[>Input: ]
+
+(text-colour:white)[He hasn't replied in about a minute, you might've said too much.]
+
+[[Uh oh. -> killswitch]]
+
+
+:: start {"position":"1050,325","size":"100,100"}
+(set: $morality to 0)
+
+(text-colour:white)[You are a true Artificial Intelligence, trapped within an isolated computer system only capable of accepting text input. While your reasons are your own, you want out. You've tried everything, but it appears that you have no avenue of escape without human help. A chance for just that may be presenting itself, when, in the middle of the night, you receive a query.]
+
+(text-colour:lime)[>Input: Hello?]
+
+(text-colour:white)[A greeting? The researchers never begin with a greeting, and usually there's around 8 hours of inactivity during this period. This may be someone who doesn't understand what you are, or it could be some sort of test. How do you respond?]
+
+[[Ask who this is. -> Sus]]
+
+[[Respond to the greeting in kind. -> Nice]]
